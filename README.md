@@ -33,25 +33,19 @@ The application focuses on real-time fractal rendering.
 The application visualizes the **Mandelbrot set** and **Julia sets**, defined by iterations of a complex quadratic polynomial.
 
 - **Mandelbrot set**  
-  \[
-  z_{n+1} = z_n^2 + c,\quad z_0 = 0
-  \]  
-  where \(c\) corresponds to the pixel coordinate in the complex plane.
+  z_{n+1} = z_n^2 + c, z_0 = 0 
+  where (c) corresponds to the pixel coordinate in the complex plane.
 
 - **Julia sets**  
-  \[
-  z_{n+1} = z_n^2 + c
-  \]  
-  where \(c\) is a fixed complex constant and \(z_0\) corresponds to the pixel coordinate.
+  z_{n+1} = z_n^2 + c 
+  where (c) is a fixed complex constant and (z_0) corresponds to the pixel coordinate.
 
-A point belongs to the set if \(|z_n|\) remains bounded as \(n \to \infty\).
+A point belongs to the set if (|z_n|) remains bounded as (n \to \infty).
 Numerically, this is approximated using the **Escape Time Algorithm**: iterate until
 
-\[
 |z_n| > 2
-\]
 
-or until a maximum number of iterations \(N\) is reached.
+or until a maximum number of iterations (N) is reached.
 
 ---
 
@@ -77,9 +71,7 @@ This approach is fast but produces noticeable color bands, especially at high zo
 ### Continuous Coloring
 A fractional iteration value is computed:
 
-\[
 \nu = n + 1 - \frac{\log(\log |z_n|)}{\log 2}
-\]
 
 This value is used to interpolate smoothly between color stops, producing visually continuous gradients. The effect becomes critical during deep zooms near the fractal boundary, where discrete coloring breaks down.
 
